@@ -17,6 +17,7 @@ extension UIView {
         if let me = self as? FocusZPositionMutating {
             me.applyCoordinatedZPositionState(context: context, coordinator: coordinator)
         }
+        fzpm_didUpdateFocus(in: context, with: coordinator)
     }
     public static func fzpm_swizzleDidUpdateFocus() {
         let instance = UIView()
