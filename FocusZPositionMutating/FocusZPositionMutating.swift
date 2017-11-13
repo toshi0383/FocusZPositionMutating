@@ -47,7 +47,6 @@ extension FocusZPositionMutating where Self: UIView {
             self.layer.zPosition = 1.0
         } else if let previous = context.previouslyFocusedView, previous.isDescendant(of: self) {
             intermediateZPosition += 0.000001
-            print(intermediateZPosition)
             self.layer.zPosition = intermediateZPosition
             completion = {
                 if let f = UIScreen.main.focusedView, !f.isDescendant(of: self) {
