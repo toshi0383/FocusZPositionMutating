@@ -12,6 +12,7 @@ class FocusableView: UIView, FocusZPositionMutating {
     override var canBecomeFocused: Bool {
         return true
     }
+    // Optionally implement your own focus animation like this.
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         coordinator.addCoordinatedAnimations({
             if context.nextFocusedView == self {
