@@ -27,10 +27,10 @@ class FocusableView: UIView, FocusZPositionMutating {
 ```
 
 # Before
-![](https://github.com/toshi0383/assets/blob/master/FocusZPositionMutating/before.gif?raw=true)
+![](https://github.com/toshi0383/assets/blob/master/FocusZPositionMutating/before.gif)
 
 # After
-![](https://github.com/toshi0383/assets/blob/master/FocusZPositionMutating/after.gif?raw=true)
+![](https://github.com/toshi0383/assets/blob/master/FocusZPositionMutating/after.gif)
 
 # LICENSE
 MIT
