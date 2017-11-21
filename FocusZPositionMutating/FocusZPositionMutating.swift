@@ -57,7 +57,7 @@ private var workItem: DispatchWorkItem?
 private func triggerResetSharedVariable() {
     workItem?.cancel()
     workItem = DispatchWorkItem {
-        intermediateZPosition = 0.5
+        intermediateZPosition = intermediateZPosition
     }
     if let workItem = workItem {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0, execute: workItem)
