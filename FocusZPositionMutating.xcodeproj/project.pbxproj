@@ -18,6 +18,7 @@
 		1F4C3E4B1FB9813D00F5E3E6 /* FocusZPositionMutating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */; };
 		1FD24AC61FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24AC51FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift */; };
 		1FD24AC81FC3EBA20017CF27 /* FocusZPositionMutating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */; };
+		1FD24ACF1FC40A240017CF27 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24ACE1FC40A240017CF27 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		1FD24AC31FC3EBA20017CF27 /* FocusZPositionMutatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusZPositionMutatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD24AC51FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusZPositionMutatingTests.swift; sourceTree = "<group>"; };
 		1FD24AC71FC3EBA20017CF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD24ACE1FC40A240017CF27 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				1F4C3E3D1FB9809300F5E3E6 /* ViewController.swift */,
 				1F4C3E311FB9806C00F5E3E6 /* Assets.xcassets */,
 				1F4C3E331FB9806D00F5E3E6 /* Info.plist */,
+				1FD24ACE1FC40A240017CF27 /* CollectionViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				1F4C3E3F1FB9809300F5E3E6 /* FocusableView.swift in Sources */,
 				1F4C3E421FB9809300F5E3E6 /* ViewController.swift in Sources */,
 				1F4C3E401FB9809300F5E3E6 /* UnfocusableCell.swift in Sources */,
+				1FD24ACF1FC40A240017CF27 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

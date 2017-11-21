@@ -26,4 +26,18 @@ class FocusableView: UIView {
 }
 
 class FocusableZPositionView: FocusableView, FocusZPositionMutating { }
-
+class FocusableZPositionCell: UICollectionViewCell, FocusZPositionMutating {
+    override var canBecomeFocused: Bool {
+        return true
+    }
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        coordinator.addCoordinatedAnimations({
+            if context.nextFocusedView == self {
+                self.transform = .init(scaleX: 1.3, y: 1.3)
+            } else {
+                self.transform = .identity
+            }
+        }, completion: nil)
+        super.didUpdateFocus(in: context, with: coordinator)
+    }
+}
