@@ -13,17 +13,30 @@ class FocusableView: UIView, FocusZPositionMutating {
         return true
     }
     // Optionally implement your own focus animation like this.
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        coordinator.addCoordinatedAnimations({
-            if context.nextFocusedView == self {
-                self.transform = .init(scaleX: 1.3, y: 1.3)
-            } else {
-                self.transform = .identity
-            }
-        }, completion: nil)
-        super.didUpdateFocus(in: context, with: coordinator)
-    }
+    // override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+    //     coordinator.addCoordinatedAnimations({
+    //         if context.nextFocusedView == self {
+    //             self.transform = .init(scaleX: 1.3, y: 1.3)
+    //         } else {
+    //             self.transform = .identity
+    //         }
+    //     }, completion: nil)
+    //     super.didUpdateFocus(in: context, with: coordinator)
+    // }
 }
+```
+
+Pass focus and unfocused zPosition to `UIView.fzpm_swizzleDidUpdateFocus()` if needed.
+It defaults to 1.0 and 0.0.
+
+```swift
+        do {
+            try UIView.fzpm_swizzleDidUpdateFocus(focusedZPosition: 0.0, unfocusedZPosition: -0.5)
+        } catch {
+            if case FZPMError.invalidParameter = error {
+                // handle error
+            }
+        }
 ```
 
 # Before

@@ -12,6 +12,10 @@ public protocol FocusZPositionMutating {
     func applyCoordinatedZPositionState(context: UIFocusUpdateContext, coordinator: UIFocusAnimationCoordinator)
 }
 
+public enum FZPMError: Error {
+    case invalidParameter(String)
+}
+
 extension UIView {
     @objc func fzpm_didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let me = self as? FocusZPositionMutating {
@@ -19,7 +23,13 @@ extension UIView {
         }
         fzpm_didUpdateFocus(in: context, with: coordinator)
     }
-    public static func fzpm_swizzleDidUpdateFocus() {
+    public static func fzpm_swizzleDidUpdateFocus(focusedZPosition: CGFloat = 1.0, unfocusedZPosition: CGFloat = 0.0) throws {
+        if focusedZPosition <= unfocusedZPosition + 0.1 {
+            throw FZPMError.invalidParameter("focusedZPosition must be greater than unfocusedZPosition + 0.1")
+        }
+        _focusedZPosition = focusedZPosition
+        _unfocusedZPosition = unfocusedZPosition
+        intermediateZPosition = unfocusedZPosition + (focusedZPosition - unfocusedZPosition) / 2
         let instance = UIView()
         let method: Method = class_getInstanceMethod(object_getClass(instance), #selector(didUpdateFocus(in:with:)))!
         let swizzledMethod: Method = class_getInstanceMethod(object_getClass(instance), #selector(fzpm_didUpdateFocus(in:with:)))!
@@ -27,8 +37,9 @@ extension UIView {
     }
 }
 
-
-private var intermediateZPosition: CGFloat = 0.5
+internal var _focusedZPosition: CGFloat = 1.0
+internal var _unfocusedZPosition: CGFloat = 0.0
+internal var intermediateZPosition: CGFloat = 0.5
 private var workItem: DispatchWorkItem?
 private func triggerResetSharedVariable() {
     workItem?.cancel()

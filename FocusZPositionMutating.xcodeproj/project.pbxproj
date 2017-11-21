@@ -16,10 +16,19 @@
 		1F4C3E421FB9809300F5E3E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C3E3D1FB9809300F5E3E6 /* ViewController.swift */; };
 		1F4C3E471FB980DF00F5E3E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C3E451FB980DF00F5E3E6 /* Main.storyboard */; };
 		1F4C3E4B1FB9813D00F5E3E6 /* FocusZPositionMutating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */; };
+		1FD24AC61FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24AC51FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift */; };
+		1FD24AC81FC3EBA20017CF27 /* FocusZPositionMutating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1F4C3E481FB9810800F5E3E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F4C3E0E1FB9805300F5E3E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F4C3E161FB9805300F5E3E6;
+			remoteInfo = FocusZPositionMutating;
+		};
+		1FD24AC91FC3EBA20017CF27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1F4C3E0E1FB9805300F5E3E6 /* Project object */;
 			proxyType = 1;
@@ -54,6 +63,9 @@
 		1F4C3E3C1FB9809200F5E3E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4C3E3D1FB9809300F5E3E6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4C3E461FB980DF00F5E3E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1FD24AC31FC3EBA20017CF27 /* FocusZPositionMutatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusZPositionMutatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD24AC51FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusZPositionMutatingTests.swift; sourceTree = "<group>"; };
+		1FD24AC71FC3EBA20017CF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FD24AC01FC3EBA20017CF27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD24AC81FC3EBA20017CF27 /* FocusZPositionMutating.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +100,7 @@
 			children = (
 				1F4C3E191FB9805300F5E3E6 /* FocusZPositionMutating */,
 				1F4C3E291FB9806C00F5E3E6 /* Example */,
+				1FD24AC41FC3EBA20017CF27 /* FocusZPositionMutatingTests */,
 				1F4C3E181FB9805300F5E3E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +110,7 @@
 			children = (
 				1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */,
 				1F4C3E281FB9806C00F5E3E6 /* Example.app */,
+				1FD24AC31FC3EBA20017CF27 /* FocusZPositionMutatingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +137,15 @@
 				1F4C3E331FB9806D00F5E3E6 /* Info.plist */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		1FD24AC41FC3EBA20017CF27 /* FocusZPositionMutatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FD24AC51FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift */,
+				1FD24AC71FC3EBA20017CF27 /* Info.plist */,
+			);
+			path = FocusZPositionMutatingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,13 +199,31 @@
 			productReference = 1F4C3E281FB9806C00F5E3E6 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1FD24AC21FC3EBA20017CF27 /* FocusZPositionMutatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FD24ACD1FC3EBA20017CF27 /* Build configuration list for PBXNativeTarget "FocusZPositionMutatingTests" */;
+			buildPhases = (
+				1FD24ABF1FC3EBA20017CF27 /* Sources */,
+				1FD24AC01FC3EBA20017CF27 /* Frameworks */,
+				1FD24AC11FC3EBA20017CF27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FD24ACA1FC3EBA20017CF27 /* PBXTargetDependency */,
+			);
+			name = FocusZPositionMutatingTests;
+			productName = FocusZPositionMutatingTests;
+			productReference = 1FD24AC31FC3EBA20017CF27 /* FocusZPositionMutatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1F4C3E0E1FB9805300F5E3E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = toshi0383;
 				TargetAttributes = {
@@ -186,6 +235,10 @@
 					1F4C3E271FB9806C00F5E3E6 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					1FD24AC21FC3EBA20017CF27 = {
+						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -205,6 +258,7 @@
 			targets = (
 				1F4C3E161FB9805300F5E3E6 /* FocusZPositionMutating */,
 				1F4C3E271FB9806C00F5E3E6 /* Example */,
+				1FD24AC21FC3EBA20017CF27 /* FocusZPositionMutatingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +277,13 @@
 			files = (
 				1F4C3E321FB9806C00F5E3E6 /* Assets.xcassets in Resources */,
 				1F4C3E471FB980DF00F5E3E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FD24AC11FC3EBA20017CF27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +309,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FD24ABF1FC3EBA20017CF27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD24AC61FC3EBA20017CF27 /* FocusZPositionMutatingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -255,6 +324,11 @@
 			isa = PBXTargetDependency;
 			target = 1F4C3E161FB9805300F5E3E6 /* FocusZPositionMutating */;
 			targetProxy = 1F4C3E481FB9810800F5E3E6 /* PBXContainerItemProxy */;
+		};
+		1FD24ACA1FC3EBA20017CF27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F4C3E161FB9805300F5E3E6 /* FocusZPositionMutating */;
+			targetProxy = 1FD24AC91FC3EBA20017CF27 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,6 +533,34 @@
 			};
 			name = Release;
 		};
+		1FD24ACB1FC3EBA20017CF27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FocusZPositionMutatingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.toshi0383.FocusZPositionMutatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		1FD24ACC1FC3EBA20017CF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FocusZPositionMutatingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.toshi0383.FocusZPositionMutatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -485,6 +587,15 @@
 			buildConfigurations = (
 				1F4C3E351FB9806D00F5E3E6 /* Debug */,
 				1F4C3E361FB9806D00F5E3E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FD24ACD1FC3EBA20017CF27 /* Build configuration list for PBXNativeTarget "FocusZPositionMutatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FD24ACB1FC3EBA20017CF27 /* Debug */,
+				1FD24ACC1FC3EBA20017CF27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
