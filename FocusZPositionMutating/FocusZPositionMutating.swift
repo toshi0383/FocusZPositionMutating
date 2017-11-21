@@ -23,6 +23,12 @@ extension UIView {
         }
         fzpm_didUpdateFocus(in: context, with: coordinator)
     }
+    @objc func fzpm_didMoveToSuperview() {
+        if let _ = self as? FocusZPositionMutating {
+            self.layer.zPosition = _unfocusedZPosition
+        }
+        fzpm_didMoveToSuperview()
+    }
     public static func fzpm_swizzleDidUpdateFocus(focusedZPosition: CGFloat = 1.0, unfocusedZPosition: CGFloat = 0.0) throws {
         if focusedZPosition <= unfocusedZPosition + 0.1 {
             throw FZPMError.invalidParameter("focusedZPosition must be greater than unfocusedZPosition + 0.1")
@@ -31,9 +37,16 @@ extension UIView {
         _unfocusedZPosition = unfocusedZPosition
         intermediateZPosition = unfocusedZPosition + (focusedZPosition - unfocusedZPosition) / 2
         let instance = UIView()
-        let method: Method = class_getInstanceMethod(object_getClass(instance), #selector(didUpdateFocus(in:with:)))!
-        let swizzledMethod: Method = class_getInstanceMethod(object_getClass(instance), #selector(fzpm_didUpdateFocus(in:with:)))!
-        method_exchangeImplementations(method, swizzledMethod)
+        do {
+            let method: Method = class_getInstanceMethod(object_getClass(instance), #selector(didUpdateFocus(in:with:)))!
+            let swizzledMethod: Method = class_getInstanceMethod(object_getClass(instance), #selector(fzpm_didUpdateFocus(in:with:)))!
+            method_exchangeImplementations(method, swizzledMethod)
+        }
+        do {
+            let method: Method = class_getInstanceMethod(object_getClass(instance), #selector(didMoveToSuperview))!
+            let swizzledMethod: Method = class_getInstanceMethod(object_getClass(instance), #selector(fzpm_didMoveToSuperview))!
+            method_exchangeImplementations(method, swizzledMethod)
+        }
     }
 }
 
@@ -55,13 +68,13 @@ extension FocusZPositionMutating where Self: UIView {
     public func applyCoordinatedZPositionState(context: UIFocusUpdateContext, coordinator: UIFocusAnimationCoordinator) {
         var completion: (() -> ())?
         if let next = context.nextFocusedView, next.isDescendant(of: self) {
-            self.layer.zPosition = _focusedZPosition
+            self.layer.zPosition = 1.0
         } else if let previous = context.previouslyFocusedView, previous.isDescendant(of: self) {
             intermediateZPosition += 0.000001
             self.layer.zPosition = intermediateZPosition
             completion = {
                 if let f = UIScreen.main.focusedView, !f.isDescendant(of: self) {
-                    self.layer.zPosition = _unfocusedZPosition
+                    self.layer.zPosition = 0.0
                     triggerResetSharedVariable()
                 }
             }
