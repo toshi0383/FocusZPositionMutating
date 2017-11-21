@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        try! UIView.fzpm_swizzleDidUpdateFocus(focusedZPosition: 0.0, unfocusedZPosition: -1.0)
+        try! UIView.fzpm_swizzleDidUpdateFocus(focusedZPosition: 0.0, unfocusedZPosition: -0.2)
         
         return true
     }

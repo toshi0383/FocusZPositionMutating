@@ -25,6 +25,10 @@ class FocusZPositionMutatingTests: XCTestCase {
         XCTAssertEqual(_focusedZPosition, 0.0)
         XCTAssertEqual(_unfocusedZPosition, -0.5)
         XCTAssertEqual(intermediateZPosition, -0.25)
+        try! UIView.fzpm_swizzleDidUpdateFocus(focusedZPosition: 0.0, unfocusedZPosition: -1.0)
+        XCTAssertEqual(_focusedZPosition, 0.0)
+        XCTAssertEqual(_unfocusedZPosition, -1.0)
+        XCTAssertEqual(intermediateZPosition, -0.5)
 
         do {
             try UIView.fzpm_swizzleDidUpdateFocus(focusedZPosition: 0.0, unfocusedZPosition: -0.1)
