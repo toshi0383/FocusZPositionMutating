@@ -55,13 +55,13 @@ extension FocusZPositionMutating where Self: UIView {
     public func applyCoordinatedZPositionState(context: UIFocusUpdateContext, coordinator: UIFocusAnimationCoordinator) {
         var completion: (() -> ())?
         if let next = context.nextFocusedView, next.isDescendant(of: self) {
-            self.layer.zPosition = 1.0
+            self.layer.zPosition = _focusedZPosition
         } else if let previous = context.previouslyFocusedView, previous.isDescendant(of: self) {
             intermediateZPosition += 0.000001
             self.layer.zPosition = intermediateZPosition
             completion = {
                 if let f = UIScreen.main.focusedView, !f.isDescendant(of: self) {
-                    self.layer.zPosition = 0.0
+                    self.layer.zPosition = _unfocusedZPosition
                     triggerResetSharedVariable()
                 }
             }
