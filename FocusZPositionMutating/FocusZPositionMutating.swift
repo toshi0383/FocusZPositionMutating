@@ -49,7 +49,7 @@ extension UIView {
         }
     }
 }
-
+public var fzpm_isDebugEnabled: Bool = false
 internal var _focusedZPosition: CGFloat = 1.0
 internal var _unfocusedZPosition: CGFloat = 0.0
 internal var intermediateZPosition: CGFloat = 0.5
@@ -69,16 +69,30 @@ extension FocusZPositionMutating where Self: UIView {
         var completion: (() -> ())?
         if let next = context.nextFocusedView, next.isDescendant(of: self) {
             self.layer.zPosition = _focusedZPosition
+            log()
         } else if let previous = context.previouslyFocusedView, previous.isDescendant(of: self) {
             intermediateZPosition += 0.000001
             self.layer.zPosition = intermediateZPosition
+            log()
             completion = {
                 if let f = UIScreen.main.focusedView, !f.isDescendant(of: self) {
                     self.layer.zPosition = _unfocusedZPosition
+                    self.log()
                     triggerResetSharedVariable()
                 }
             }
         }
         coordinator.addCoordinatedAnimations(nil, completion: completion)
+    }
+    private func log() {
+        guard fzpm_isDebugEnabled else { return }
+        queuedPrint("[FZPM DEBUG] zPosition: \(self.layer.zPosition), self: \(self)")
+    }
+}
+
+private let queue = DispatchQueue(label: "jp.toshi0383.FocusZPositionMutating")
+private func queuedPrint(_ message: String) {
+    queue.async {
+        print(message)
     }
 }
