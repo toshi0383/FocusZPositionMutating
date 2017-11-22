@@ -27,14 +27,8 @@ final class CollectionViewCell: FocusableZPositionCell {
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .gray
-    }
-    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        if context.nextFocusedView == self {
-            backgroundColor = .white
-        } else {
-            backgroundColor = .gray
-        }
-        super.didUpdateFocus(in: context, with: coordinator)
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 4
+        backgroundColor = .white
     }
 }

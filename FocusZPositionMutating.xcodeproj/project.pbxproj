@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4C000F1FC5628A00CF0635 /* MultipleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C000E1FC5628A00CF0635 /* MultipleCollectionViewController.swift */; };
+		1F4C00111FC5632E00CF0635 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C00101FC5632E00CF0635 /* DataSource.swift */; };
 		1F4C3E1C1FB9805300F5E3E6 /* FocusZPositionMutating.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4C3E1A1FB9805300F5E3E6 /* FocusZPositionMutating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F4C3E231FB9806400F5E3E6 /* FocusZPositionMutating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C3E221FB9806400F5E3E6 /* FocusZPositionMutating.swift */; };
 		1F4C3E321FB9806C00F5E3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C3E311FB9806C00F5E3E6 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F4C000E1FC5628A00CF0635 /* MultipleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCollectionViewController.swift; sourceTree = "<group>"; };
+		1F4C00101FC5632E00CF0635 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		1F4C3E171FB9805300F5E3E6 /* FocusZPositionMutating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FocusZPositionMutating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4C3E1A1FB9805300F5E3E6 /* FocusZPositionMutating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FocusZPositionMutating.h; sourceTree = "<group>"; };
 		1F4C3E1B1FB9805300F5E3E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				1F4C3E311FB9806C00F5E3E6 /* Assets.xcassets */,
 				1F4C3E331FB9806D00F5E3E6 /* Info.plist */,
 				1FD24ACE1FC40A240017CF27 /* CollectionViewController.swift */,
+				1F4C000E1FC5628A00CF0635 /* MultipleCollectionViewController.swift */,
+				1F4C00101FC5632E00CF0635 /* DataSource.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4C00111FC5632E00CF0635 /* DataSource.swift in Sources */,
+				1F4C000F1FC5628A00CF0635 /* MultipleCollectionViewController.swift in Sources */,
 				1F4C3E411FB9809300F5E3E6 /* AppDelegate.swift in Sources */,
 				1F4C3E3F1FB9809300F5E3E6 /* FocusableView.swift in Sources */,
 				1F4C3E421FB9809300F5E3E6 /* ViewController.swift in Sources */,
